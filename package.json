@@ -1,0 +1,55 @@
+{
+  "name": "@gnosec/password-generator",
+  "version": "1.0.0-rc1",
+  "description": "Shared library with password generation utilities",
+  "license": "GPL-3.0-only",
+  "author": {
+    "name": "gnosec",
+    "url": "https://github.com/gnosec"
+  },
+  "repository": "git@github.com/gnosec/password-generator",
+  "homepage": "https://github.com/gnosec/password-generator",
+  "bugs": {
+    "url": "https://github.com/gnosec/password-generator/issues"
+  },
+  "scripts": {
+    "compile": "tsc src/public_api.ts --outDir dist --target ES5",
+    "build": "npm run test && npm run compile",
+    "test": "jest --preset=ts-jest",
+    "cover": "jest --preset=ts-jest --coverage --collectCoverageFrom=lib/**/*.{ts}",
+    "prepublish": "npm run build"
+  },
+  "main": "dist/public_api.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "lodash.isarray": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/es6-shim": "^0.31.37",
+    "@types/jest": "^23.3.2",
+    "@types/lodash.isarray": "^4.0.4",
+    "@types/node": "^10.9.4",
+    "coveralls": "^3.0.2",
+    "husky": "^1.0.0-rc.14",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.2.2",
+    "npm": "^6.4.1",
+    "prettier": "^1.14.2",
+    "ts-jest": "^23.10.0",
+    "typescript": "^3.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write --single-quote",
+      "git add"
+    ]
+  }
+}
