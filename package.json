@@ -1,6 +1,6 @@
 {
   "name": "@gnosec/password-generator",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0-rc3",
   "description": "Shared library with password generation utilities",
   "license": "GPL-3.0-only",
   "author": {
@@ -19,8 +19,7 @@
     "compile": "tsc src/public_api.ts --outDir dist --target ES5",
     "build": "npm run test && npm run compile",
     "test": "jest --preset=ts-jest",
-    "cover": "jest --preset=ts-jest --coverage --collectCoverageFrom=src/**/*.{ts}",
-    "prepublish": "npm run build"
+    "cover": "jest --preset=ts-jest --coverage --collectCoverageFrom=src/**/*.{ts}"
   },
   "main": "dist/public_api.js",
   "files": [
