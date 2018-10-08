@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gnosec/password-generator.svg?branch=develop)](https://travis-ci.org/gnosec/password-generator)
+
 # Password Generator
 
 Shared library with password generation utilities
@@ -11,8 +13,20 @@ npm install --save @gnosec/password-generator
 ## Usage
 
 ```typescript
-import { PasswordGenerator } from '@gnosec/password-generator';
+import {
+  generateRandomPassword,
+  Numbers,
+  Letters
+} from '@gnosec/password-generator';
 
-const randomPassword = new PasswordGenerator().generateRandomPassword();
-console.log(randomPassword); //
+console.log(generateRandomPassword());
+// XW*g1VVizD*KQ@0Ojj"x3'VHv[p1sKE4H
+
+console.log(
+  generateRandomPassword({
+    length: 8,
+    characters: [...Numbers, ...Letters]
+  })
+);
+// PVf20mBm
 ```

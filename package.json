@@ -12,6 +12,9 @@
   "bugs": {
     "url": "https://github.com/gnosec/password-generator/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "compile": "tsc src/public_api.ts --outDir dist --target ES5",
     "build": "npm run test && npm run compile",
@@ -24,12 +27,12 @@
     "dist"
   ],
   "dependencies": {
-    "lodash.isarray": "^4.0.0"
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "@types/es6-shim": "^0.31.37",
     "@types/jest": "^23.3.2",
-    "@types/lodash.isarray": "^4.0.4",
+    "@types/lodash": "^4.14.116",
     "@types/node": "^10.9.4",
     "coveralls": "^3.0.2",
     "husky": "^1.0.0-rc.14",

@@ -1,5 +1,5 @@
 import { generateRandomPassword } from './password-generator';
-import { ExtendedSymbols } from './character-sets';
+import { Letters, Numbers, Symbols } from './characters';
 
 describe('PasswordGenerator', () => {
 
@@ -12,7 +12,11 @@ describe('PasswordGenerator', () => {
 
     const DefaultOptions = {
       length: 33,
-      characters: ExtendedSymbols
+      characters: [
+        ...Numbers,
+        ...Letters,
+        ...Symbols
+      ]
     };
 
     function expectContainsOnlyCharactersIn(password: string, characters: string[]): void {

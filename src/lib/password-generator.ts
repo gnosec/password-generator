@@ -1,7 +1,7 @@
 import { randomBytes } from 'crypto';
 import { toArray } from './support';
-import { ExtendedSymbols } from './character-sets';
-const isArray = require('lodash.isarray');
+import { Letters, Numbers, Symbols } from './characters';
+import { isArray, uniq } from 'lodash';
 
 export interface Options {
   length?: number;
@@ -10,7 +10,11 @@ export interface Options {
 
 const DefaultOptions = {
   length: 33,
-  characters: ExtendedSymbols
+  characters: [
+    ...Numbers,
+    ...Letters,
+    ...Symbols
+  ]
 };
 
 export function generateRandomPassword(options: Options = DefaultOptions): string {
@@ -28,6 +32,9 @@ function createSettings(options: Options) {
     ...DefaultOptions,
     ...options
   };
+  if (options.characters != null) {
+    settings.characters = uniq(options.characters);
+  }
   if (typeof settings.length !== 'number') {
     throw new Error(`option "length" must be of type number`);
   }

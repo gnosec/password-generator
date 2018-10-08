@@ -1,0 +1,18 @@
+language: node_js
+sudo: false
+node_js:
+- node
+install:
+- npm install
+script:
+- npm run build
+- npm run cover
+after_script: cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
+deploy:
+  on:
+    tags: true
+    branch: master
+  provider: npm
+  email: gnosec@protonmail.com
+  api_key:
+    secure: ArmYBJEfYgw41t9ky14bWVkF4pnSk7hJ+7CPJha2qPoqMGL+/jo8O4MyAfgNUzLPmEKTdEtfbN68xGJ/RNXjspitXAfUPstF7G1kaELfEABTZrmDx9BY0iHyosfWROKwm5jq+TZc3e4Ov7Bq+usALs4MMPl/Idro+u5sqrZafvXdy/FhBLOUsxLIYKNARq/Gb3WtUWDwRyvI9bE0q7HzJXswW4vAoMnmP4yXVpmeJX0DbJFyCJXlFfdij4g4qsY7YGKBRayGamfB5WP6q4P4HjIXye2kiZ39lXh++FzrgNj7JpbKtS6mPfIGJy8TF45Tr0nIBMYZSMPLrYBKsSXC/beG3esnJfFoLa8HIGSiFhBFXy6hNGrcrvX1PBfi3FyKhGshqKzU6BtPvanVryXyLxfbkw74kdMlwg7/YLkxy2DITud7HoqTtqPBV9TnKoA+mJdXvRf3SyC2CqjTR5nuvv136tjVB7v+tP+GN/5su2gjGafKA4B+r8Jnl6R5Y1XCfwGdYmBWPh+gSYfM4wU86Nc7oEv9ILLCsxuVhmncZbwERWdIGEuSNoYmNVreFrhX2CTPdJNBZhS8pey+i/GqkEN/vyInh892dyidcuxbIRiyORLd5qFZNP4+ebzbSzyCWd1hoCWVh6GMKbufxM2C5xh9mGsX1NUG+9d9QaeXH9k=

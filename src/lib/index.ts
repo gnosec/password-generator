@@ -1,3 +1,2 @@
-export * from './character-set';
-export * from './character-sets';
+export * from './characters';
 export * from './password-generator';
