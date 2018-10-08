@@ -1,6 +1,6 @@
 {
   "name": "@gnosec/password-generator",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "description": "Shared library with password generation utilities",
   "license": "GPL-3.0-only",
   "author": {
