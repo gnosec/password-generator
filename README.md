@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/gnosec/password-generator.svg?branch=develop)](https://travis-ci.org/gnosec/password-generator)
+[![dependencies Status](https://david-dm.org/gnosec/password-generator/status.svg)](https://david-dm.org/gnosec/password-generator)
+[![devDependencies Status](https://david-dm.org/gnosec/password-generator/dev-status.svg)](https://david-dm.org/gnosec/password-generator?type=dev)
+[![Coverage Status](https://coveralls.io/repos/github/gnosec/password-generator/badge.svg)](https://coveralls.io/github/gnosec/password-generator)
 
 # Password Generator
 
@@ -19,14 +22,12 @@ import {
   Letters
 } from '@gnosec/password-generator';
 
-console.log(generateRandomPassword());
+generateRandomPassword();
 // XW*g1VVizD*KQ@0Ojj"x3'VHv[p1sKE4H
 
-console.log(
-  generateRandomPassword({
-    length: 8,
-    characters: [...Numbers, ...Letters]
-  })
-);
+generateRandomPassword({
+  length: 8,
+  characters: [...Numbers, ...Letters]
+});
 // PVf20mBm
 ```
