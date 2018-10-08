@@ -19,7 +19,7 @@
     "compile": "tsc src/public_api.ts --outDir dist --target ES5",
     "build": "npm run test && npm run compile",
     "test": "jest --preset=ts-jest",
-    "cover": "jest --preset=ts-jest --coverage --collectCoverageFrom=lib/**/*.{ts}",
+    "cover": "jest --preset=ts-jest --coverage --collectCoverageFrom=src/**/*.{ts}",
     "prepublish": "npm run build"
   },
   "main": "dist/public_api.js",
